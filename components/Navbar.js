@@ -38,9 +38,24 @@ export default function Navbar() {
     <nav className="flex justify-between items-center  px-2 py-6 md:py-10">
       <div className="flex  space-x-1 md:space-x-6 text-gray-800 capitalize dark:text-gray-300">
         <NavLink href="/" text="Home" />
-        <NavLink href="/projects" text="Projects" />
         <NavLink href="/about" text="About" />
-        <NavLink href="/blog" text="Blog" />
+        <a
+          href="http://github.com/ngaboindev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500"
+        >
+          Projects
+        </a>
+
+        <a
+          href="https://blog.robertngabo.tech/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500"
+        >
+          Blog
+        </a>
       </div>
       <div>
         <button
