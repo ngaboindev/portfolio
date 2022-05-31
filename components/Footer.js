@@ -32,7 +32,7 @@ export default function Footer() {
         </FooterLink>
       </div>
       <div className="block">
-        <p>Made With Nextjs, Tailwind & Vercel</p>
+        <p>Made With Nextjs, MDX , Tailwind & Vercel</p>
       </div>
     </footer>
   );
