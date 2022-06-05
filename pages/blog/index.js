@@ -56,6 +56,7 @@ export default Blog;
 
 export const getStaticProps = () => {
   const blogs = getBlogs();
+  // date sorted blogs
   const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return {
