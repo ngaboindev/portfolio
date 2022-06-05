@@ -1,0 +1,70 @@
+---
+title: 'Writing good commit messages'
+date: '2022-06-05'
+description: 'Writing good commit messages can help team members.'
+tags:
+  - best practices
+  - git
+---
+
+## Why It's Important ?
+
+Writing good commit messages can help team members , let's say there's bug that broke the production code which was not there before, to find out what cause problem, reading recent commit messages could be useful.The well written commit message can save lot of time finding the changes that broke the production code.
+
+Here's other important purposes:
+
+- Helps speeding up the reviewing process
+- Helps the future maintainers of codebase , to find out where and how to add the code.
+
+## What is a good commit message ?
+
+the good commit message can be written in different styles. the trick is to pick the best style that works with your team and then stick to it. being in consistent in your team commit message produces a good results over time like anything else.
+
+structure your commit message like this:
+
+```
+[type] [optional scope]: [description]
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Each commit has a type that directly matches semantic versioning practices:
+
+- fix: patches a bug in our codebase
+- feat: introduces a new feature in our codebase
+- refactor!: introduces a breaking API change by refactoring because of the “!” symbol
+
+Some other Angular’s type suggestions are: “build:”, “chore:”, “ci:”, “docs:”, “style:”, “refactor:”, “perf:”, “test:”, and others
+
+### Example
+
+```
+feat: add spanish language
+```
+
+## Conclusion
+
+A best format for writing a good commit message can be different in each team. the most important thing to keep is to make sure you and team keep it simple, readable and consistent.
+
+## Useful Links
+
+- <a
+    href="https://github.com/joelparkerhenderson/git-commit-message"
+    target="__blank"
+  >
+    https://github.com/joelparkerhenderson/git-commit-message{' '}
+  </a>
+- <a
+    href="https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message"
+    target="__blank"
+  >
+    https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message
+  </a>
+- <a
+    href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html"
+    target="__blank"
+  >
+    https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+  </a>
