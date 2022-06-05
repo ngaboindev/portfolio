@@ -56,19 +56,11 @@ export default Blog;
 
 export const getStaticProps = () => {
   const blogs = getBlogs();
-
-  blogs
-    .map((blog) => blog.data)
-    .sort((a, b) => {
-      if (a.data.date > b.data.date) return 1;
-      if (a.data.date < b.data.date) return -1;
-
-      return 0;
-    });
+  const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return {
     props: {
-      blogs,
+      blogs: sortedBlogs,
     },
   };
 };
