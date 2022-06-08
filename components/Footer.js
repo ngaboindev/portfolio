@@ -16,7 +16,7 @@ const FooterLink = ({ children, href, title }) => {
 
 export default function Footer() {
   return (
-    <footer className="py-7 flex-col gap-2 flex items-center justify-center text-gray-500 dark:text-gray-300 font-light text-sm">
+    <footer className="py-12  mt-8 flex-col gap-2 flex items-center justify-center text-gray-500 dark:text-gray-300 font-light text-sm">
       <div className="flex space-x-4 items-center">
         <FooterLink title="Twitter" href="https://twitter.com/robert_ngabo">
           <RiTwitterLine className="text-xl" />
