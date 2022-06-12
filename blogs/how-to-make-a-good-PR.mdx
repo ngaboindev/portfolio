@@ -1,0 +1,60 @@
+---
+title: 'How to make a good Pull Request'
+date: '2022-06-12'
+description: 'After writing good code , help your others review it'
+tags:
+  - best practices
+  - git
+---
+
+Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub.
+Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
+
+More here : <a href='https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests' target='__blank'>docs.github.com</a>
+
+## Why it's important
+
+The best written pull request speeds up the code reviewing , because the best way we present our code for code review ,
+the more likely the code reviewer will easily review and speeds up the code review process.
+
+### Template
+
+It's simple to set up a template that you and your team members can use to create the standard PR. And if you and your team are using
+version control like GitHub , it's easy to setup the template that can be injected in the description of every pull request created.
+find out more <a href='https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository' target="__blank">docs.github.com</a>
+
+```
+## What?
+I've added support for authentication to implement Key Result 2 of OKR1. It includes model, table, controller and test. For more background, see ticket
+#JIRA-123.
+## Why?
+These changes complete the user login and account creation experience. See #JIRA-123 for more information.
+## How?
+This includes a migration, model and controller for user authentication. I'm using Devise to do the heavy lifting. I ran Devise migrations and those are included here.
+## Screenshots (optional)
+0
+## Anything Else?
+Let's consider using a 3rd party authentication provider for this, to offload MFA and other considerations as they arise and as the privacy landscape evolves. AWS Cognito is a good option, so is Firebase. I'm happy to start researching this path. Let's also consider breaking this out into its own service. We can then re-use it or share the accounts with other apps in the future.
+```
+
+### What ?
+
+Explain the changes that you've made.
+
+### Why ?
+
+explain what goal this achieves
+
+### How ?
+
+explain the reason why you choose to certain method or technique like recurcive method instead of loop.
+
+### Screenshots (optional) ?
+
+upload screenshots if available
+
+### Anything Else ?
+
+you can ask questions if there is any , discuss any technical debt or call out challenges, etc.
+
+Remember, Always keep it simple and concise.

@@ -7,18 +7,18 @@ const Blog = ({ blogs }) => {
   return (
     <Layout>
       <div className="mb-5">
-        <h3 className="text-xl text-gray-700 tracking-tight  dark:text-gray-400 md:text-3xl font-black mb-5">
+        <h3 className="mb-5 text-xl font-black tracking-tight text-gray-700 dark:text-gray-400 md:text-3xl">
           Blog
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 my-5">
+        <p className="my-5 text-gray-600 dark:text-gray-300">
           A blog about tech, coding and other fascinating topics.
         </p>
 
         <div className="py-2">
           {blogs.map((blog, index) => (
             <Link href={`/blog/${blog.link}`} key={index}>
-              <article className="cursor-pointer my-3 px-6 py-4">
-                <div className="flex  items-center  justify-between  mb-4  text-sm text-left text-gray-500 md:text-right md:mb-2">
+              <article className="px-6 py-4 my-3 cursor-pointer">
+                <div className="flex items-center justify-between mb-4 text-sm text-left text-gray-500 md:text-right md:mb-2">
                   <div>
                     <p> {format(parseISO(blog.date), 'MMMM dd, yyyy')}</p>
                   </div>
@@ -34,7 +34,7 @@ const Blog = ({ blogs }) => {
                     <a
                       href="#"
                       key={index}
-                      className="mr-2 border p-2 rounded text-base"
+                      className="p-2 mr-2 text-base border rounded"
                     >
                       {tag}
                     </a>
