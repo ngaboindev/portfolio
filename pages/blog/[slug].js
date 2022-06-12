@@ -5,6 +5,8 @@ import { MDXRemote } from 'next-mdx-remote';
 import { format, parseISO } from 'date-fns';
 import { getFileData, getPaths } from 'utils/mdx';
 import Layout from '@/components/Layout';
+import { ArrowLeftIcon } from '@heroicons/react/solid';
+import Link from 'next/link';
 
 const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
   const customMeta = {
@@ -16,11 +18,17 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
   return (
     <Layout customMeta={customMeta}>
       <div className="mb-5 text-gray-700 dark:text-gray-400">
+        <Link href="/blog">
+          <a>
+            {' '}
+            <ArrowLeftIcon className="w-5 h-5 mb-5 hover:text-blue-500" />
+          </a>
+        </Link>
         <div className="mb-3">
-          <h1 className="text-xl tracking-tight   md:text-3xl font-black">
+          <h1 className="text-xl font-black tracking-tight md:text-3xl">
             {frontMatter.title}
           </h1>
-          <div className="space-y-1 text-sm mb-5">
+          <div className="mb-5 space-y-1 text-sm">
             <div>
               <p> {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}</p>
             </div>
@@ -32,7 +40,7 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
                 <a
                   href="#"
                   key={index}
-                  className="mr-2 border p-2 rounded text-base"
+                  className="p-2 mr-2 text-base border rounded"
                 >
                   {tag}
                 </a>
@@ -41,7 +49,7 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
           </div>
         </div>
 
-        <div className="prose  prose-slate dark:prose-invert text-lg">
+        <div className="text-lg prose prose-slate dark:prose-invert">
           <MDXRemote {...mdxSource} />
         </div>
       </div>
