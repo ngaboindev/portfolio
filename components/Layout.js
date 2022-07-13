@@ -15,7 +15,7 @@ export default function Layout(props) {
     ...customMeta,
   };
   return (
-    <main className="md:max-w-5xl  px-3 md:mx-auto md:px-24 flex flex-col min-h-screen">
+    <main className="md:max-w-7xl  px-3 md:mx-auto md:px-24 flex flex-col min-h-screen">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />

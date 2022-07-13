@@ -13,7 +13,7 @@ function NavLink({ href, text }) {
     <Link href={href}>
       <a
         className={cn(
-          isActive && 'bg-blue-100 dark:bg-gray-500 font-semibold',
+          isActive && 'dark:text-gray-100 text-gray-800 font-black',
           'py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500 transition-all'
         )}
       >
@@ -49,10 +49,7 @@ export default function Navbar() {
         </a>
       </div>
       <div>
-        <button
-          onClick={toggleTheme}
-          className="bg-blue-100 dark:bg-gray-500 p-2 rounded"
-        >
+        <button onClick={toggleTheme} className="p-2 rounded">
           {resolvedTheme === 'dark' ? (
             <MoonIcon className="h-5 w-5" />
           ) : (
