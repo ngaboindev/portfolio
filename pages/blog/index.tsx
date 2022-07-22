@@ -2,8 +2,9 @@ import Layout from '@/components/Layout';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { getBlogs } from 'utils/mdx';
+import { PostType } from 'types/post';
 
-const Blog = ({ blogs }) => {
+export default function Blogs({ blogs }) {
   return (
     <Layout>
       <div className="mb-5">
@@ -50,18 +51,19 @@ const Blog = ({ blogs }) => {
       </div>
     </Layout>
   );
-};
-
-export default Blog;
+}
 
 export const getStaticProps = () => {
   const blogs = getBlogs();
   // date sorted blogs
-  const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedBlogs: PostType[] = blogs.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return {
     props: {
       blogs: sortedBlogs,
     },
+    revalidate: 6,
   };
 };
