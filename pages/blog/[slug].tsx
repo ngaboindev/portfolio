@@ -7,8 +7,15 @@ import { getFileData, getPaths } from 'utils/mdx';
 import Layout from '@/components/Layout';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactFragment,
+  ReactPortal,
+  Key,
+} from 'react';
 
-const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
+const SingleBlog = ({ mdxSource, frontMatter, readTime }): JSX.Element => {
   const customMeta = {
     title: `${frontMatter.title} - Robert Ngabo`,
     description: `${frontMatter.description}`,
@@ -17,7 +24,7 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
 
   return (
     <Layout customMeta={customMeta}>
-      <div className="mb-5 text-gray-700 dark:text-gray-400">
+      <div className="mb-5 text-gray-700 dark:text-gray-200">
         <Link href="/blog">
           <a>
             {' '}
@@ -36,20 +43,31 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
               <p className="text-sm"> {readTime.text}</p>
             </div>
             <div className="py-2">
-              {frontMatter.tags.map((tag, index) => (
-                <a
-                  href="#"
-                  key={index}
-                  className="p-2 mr-2 text-base border rounded"
-                >
-                  {tag}
-                </a>
-              ))}
+              {frontMatter.tags.map(
+                (
+                  tag:
+                    | string
+                    | number
+                    | boolean
+                    | ReactElement<any, string | JSXElementConstructor<any>>
+                    | ReactFragment
+                    | ReactPortal,
+                  index: Key
+                ) => (
+                  <a
+                    href="#"
+                    key={index}
+                    className="p-2 mr-2 text-base border rounded"
+                  >
+                    {tag}
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>
 
-        <div className="text-lg prose prose-slate dark:prose-invert">
+        <div className="text-lg prose sm:prose-lg prose-indigo  dark:prose-invert">
           <MDXRemote {...mdxSource} />
         </div>
       </div>
@@ -59,7 +77,7 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }) => {
 
 export default SingleBlog;
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: { params: { slug: string } }) => {
   const { slug } = context.params;
 
   const source = getFileData(slug);
@@ -81,6 +99,6 @@ export const getStaticPaths = () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 };

@@ -8,7 +8,7 @@ export const getBlogs = () => {
   const files = fs.readdirSync(path.join(process.cwd(), 'blogs'));
 
   if (files) {
-    files.forEach((file) => {
+    files.forEach((file: string) => {
       if (path.extname(file) == '.mdx') {
         const source = fs.readFileSync(
           path.join(process.cwd(), 'blogs', `${file}`),
@@ -32,7 +32,7 @@ export const getPaths = () => {
 
   const files = fs.readdirSync(path.join(process.cwd(), 'blogs'));
   if (files) {
-    files.forEach((file) => {
+    files.forEach((file: string) => {
       if (path.extname(file) == '.mdx') {
         paths.push({ params: { slug: file.replace('.mdx', '') } });
       }
@@ -43,7 +43,7 @@ export const getPaths = () => {
   }
 };
 
-export const getFileData = (fileName) => {
+export const getFileData = (fileName: string) => {
   const data = fs.readFileSync(
     path.join(process.cwd(), 'blogs', `${fileName}.mdx`),
     {

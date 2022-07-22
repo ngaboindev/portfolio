@@ -1,9 +1,7 @@
 import Layout from '@/components/Layout';
-import { ArrowCircleRightIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
-import Link from 'next/link';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <Layout>
       <div className="flex flex-col-reverse gap-3 lg:flex-row  items-center mt-2 mb-24">
