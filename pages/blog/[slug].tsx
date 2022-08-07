@@ -21,6 +21,7 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }): JSX.Element => {
     title: `${frontMatter.title} - Robert Ngabo`,
     description: `${frontMatter.description}`,
     type: 'article',
+    keywords: `${frontMatter.title}`,
   };
 
   return (
