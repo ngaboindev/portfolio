@@ -24,7 +24,7 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }): JSX.Element => {
   };
 
   return (
-    <Layout customMeta={customMeta}>
+    <Layout {...customMeta}>
       <div className="mb-5 text-gray-700 dark:text-gray-200 max-w-full pt-8 pb-24 lg:flex lg:justify-center mt:pt-12">
         <div className="max-w-2xl px-5 mx-auto overflow-x-hidden lg:mx-0">
           <Link href="/blog">
