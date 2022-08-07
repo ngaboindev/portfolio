@@ -10,7 +10,9 @@ export default function Layout(props) {
   const meta = {
     title: 'Robert Ngabo – a Programmer',
     description: `Front-end developer, Life-Long Learner.`,
-    image: '/images/profile.jpg',
+    image: 'https://robertngabo.tech/images/profile.png',
+    keywords:
+      'Ngabo Robert, Robert Ngabo, Software Developer, Kigali, Full Stack Developer, Software Enginner',
     type: 'website',
     ...customMeta,
   };
@@ -20,6 +22,10 @@ export default function Layout(props) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
+        <meta name="keywords" content={meta.keywords} />
+        <meta name="author" content="Robert Ngabo" />
+        <meta name="title" content={meta.title} />
+        <meta />
         <meta
           property="og:url"
           content={`https://robertngabo.tech/${router.asPath}`}
@@ -33,6 +39,10 @@ export default function Layout(props) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
+        <meta
+          property="twitter:url"
+          content={`https://robertngabo.tech/${router.asPath}`}
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@robert_ngabo" />
         <meta name="twitter:title" content={meta.title} />
