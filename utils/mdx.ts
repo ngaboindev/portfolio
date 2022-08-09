@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 import matter from 'gray-matter';
-import readingTime from 'reading-time';
+import readingTime, { ReadTimeResults } from 'reading-time';
 
 export const getBlogs = () => {
-  let blogs = [];
+  let blogs: { readTime: ReadTimeResults; link: string }[] = [];
   const files = fs.readdirSync(path.join(process.cwd(), 'blogs'));
 
   if (files) {
@@ -28,7 +28,7 @@ export const getBlogs = () => {
 };
 
 export const getPaths = () => {
-  let paths = [];
+  let paths: { params: { slug: string } }[] = [];
 
   const files = fs.readdirSync(path.join(process.cwd(), 'blogs'));
   if (files) {

@@ -5,7 +5,12 @@ import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 import { useTheme } from 'next-themes';
 import cn from 'classnames';
 
-function NavLink({ href, text }) {
+type NavLinkProps = {
+  href: string;
+  text: string;
+};
+
+function NavLink({ href, text }: NavLinkProps) {
   const router = useRouter();
   const isActive = router.asPath === href;
 

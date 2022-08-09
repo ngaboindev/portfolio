@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
-export default function Layout(props) {
+export default function Layout(props: { [x: string]: any; children: any }) {
   const router = useRouter();
   const { children, ...customMeta } = props;
 

@@ -1,24 +1,30 @@
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { format, parseISO } from 'date-fns';
 import { getFileData, getPaths } from 'utils/mdx';
 import Layout from '@/components/Layout';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactFragment,
-  ReactPortal,
-  Key,
-} from 'react';
 import AuthorInfo from '@/components/AuthorInfo';
+import { PostType } from 'types/post';
 
-const SingleBlog = ({ mdxSource, frontMatter, readTime }): JSX.Element => {
+type SingleBlogProps = {
+  mdxSource: MDXRemoteSerializeResult;
+  frontMatter: PostType;
+  readTime: {
+    text: string;
+  };
+};
+
+const SingleBlog = ({
+  mdxSource,
+  frontMatter,
+  readTime,
+}: SingleBlogProps): JSX.Element => {
   const customMeta = {
-    title: `${frontMatter.title} - Robert Ngabo`,
+    title: `${frontMatter.title} | Robert Ngabo`,
     description: `${frontMatter.description}`,
     type: 'article',
     keywords: `${frontMatter.title}`,
@@ -46,26 +52,15 @@ const SingleBlog = ({ mdxSource, frontMatter, readTime }): JSX.Element => {
                 <p className="text-sm"> {readTime.text}</p>
               </div>
               <div className="py-2">
-                {frontMatter.tags.map(
-                  (
-                    tag:
-                      | string
-                      | number
-                      | boolean
-                      | ReactElement<any, string | JSXElementConstructor<any>>
-                      | ReactFragment
-                      | ReactPortal,
-                    index: Key
-                  ) => (
-                    <a
-                      href="#"
-                      key={index}
-                      className="p-2 mr-2 text-base border rounded"
-                    >
-                      {tag}
-                    </a>
-                  )
-                )}
+                {frontMatter.tags.map((tag) => (
+                  <a
+                    href="#"
+                    key={tag}
+                    className="p-2 mr-2 text-base border rounded"
+                  >
+                    {tag}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

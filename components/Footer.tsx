@@ -1,6 +1,12 @@
 import { RiTwitterLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 
-const FooterLink = ({ children, href, title }) => {
+type FooterLinkProps = {
+  href: string;
+  title: string;
+  children: React.ReactNode;
+};
+
+const FooterLink = ({ children, href, title }: FooterLinkProps) => {
   return (
     <a
       href={href}
