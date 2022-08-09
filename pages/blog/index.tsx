@@ -4,7 +4,11 @@ import Link from 'next/link';
 import { getBlogs } from 'utils/mdx';
 import { PostType } from 'types/post';
 
-export default function Blogs({ blogs }) {
+type BlogsPageProps = {
+  blogs: PostType[];
+};
+
+export default function Blogs({ blogs }: BlogsPageProps) {
   return (
     <Layout>
       <div className="mb-5">
@@ -24,7 +28,7 @@ export default function Blogs({ blogs }) {
                     <p> {format(parseISO(blog.date), 'MMMM dd, yyyy')}</p>
                   </div>
                   <div>
-                    <p>{blog.readTime.text}</p>
+                    <p>{blog?.readTime?.text}</p>
                   </div>
                 </div>
                 <h3 className="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
@@ -55,8 +59,9 @@ export default function Blogs({ blogs }) {
 
 export const getStaticProps = () => {
   const blogs = getBlogs();
-  // date sorted blogs
-  const sortedBlogs: PostType[] = blogs.sort(
+  // @ts-ignore
+  const sortedBlogs: PostType[] = blogs?.sort(
+    //@ts-ignore
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 

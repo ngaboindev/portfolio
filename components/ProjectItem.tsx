@@ -1,5 +1,11 @@
 import { FaLink } from 'react-icons/fa';
-export default function ProjectItem({ project }) {
+import { Project } from 'types/project';
+
+type ProjectItemProps = {
+  project: Project;
+};
+
+export default function ProjectItem({ project }: ProjectItemProps) {
   return (
     <div className="border text-gray-700 dark:text-gray-400 dark:border-gray-800 p-6 bg-gray-50 dark:bg-gray-900 dark:shadow-gray-900 shadow-sm hover:shadow transition-all cursor-pointer rounded-md">
       <div className="flex justify-between items-center">

@@ -3,6 +3,8 @@ export type PostType = {
   date: string;
   description: string;
   tags: string[];
-  readTime: object;
-  link: string;
+  readTime?: {
+    text: string;
+  };
+  link?: string;
 };
