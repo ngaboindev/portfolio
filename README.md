@@ -1,8 +1,9 @@
 ## Robert Ngabo
 
-My personal portfolio website and blog where a blog about cool tech stuff.
+My personal portfolio website and blog
 
 - Framework: [Next.js]('http://nextjs.org/')
+- [Typescript](https://www.typescriptlang.org/)
 - Styling : [Tailwind CSS]('https://tailwindcss.com/')
 - Blog : [MDX](https://mdxjs.com/)
 
