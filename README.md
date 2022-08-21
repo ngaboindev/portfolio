@@ -8,6 +8,7 @@ My personal portfolio website and blog
 - [Typescript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [MDX](https://mdxjs.com/)
+- [Vercel](https://vercel.com/)
 
 ### Running Locally
 
