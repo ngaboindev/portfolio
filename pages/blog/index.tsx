@@ -21,7 +21,7 @@ export default function Blogs({ blogs }: BlogsPageProps) {
 
         <div className="py-2">
           {blogs.map((blog, index) => (
-            <Link href={`/blog/${blog.link}`} key={index}>
+            <Link href={`/blog/${blog.link}`} key={index} legacyBehavior>
               <article className="px-6 py-4 my-3 cursor-pointer">
                 <div className="flex items-center justify-between mb-4 text-sm text-left text-gray-500 md:text-right md:mb-2">
                   <div>

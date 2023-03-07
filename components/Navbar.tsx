@@ -15,16 +15,16 @@ function NavLink({ href, text }: NavLinkProps) {
   const isActive = router.asPath === href;
 
   return (
-    <Link href={href}>
-      <a
-        className={cn(
-          isActive && 'dark:text-gray-100 text-gray-800 font-black',
-          'py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500 transition-all'
-        )}
-      >
-        {text}
-      </a>
-    </Link>
+    (<Link
+      href={href}
+      className={cn(
+        isActive && 'dark:text-gray-100 text-gray-800 font-black',
+        'py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500 transition-all'
+      )}>
+
+      {text}
+
+    </Link>)
   );
 }
 

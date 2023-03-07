@@ -35,10 +35,10 @@ const SingleBlog = ({
       <div className="mb-5 text-gray-700 dark:text-gray-200 max-w-full pt-8 pb-24 lg:flex lg:justify-center mt:pt-12">
         <div className="max-w-2xl px-5 mx-auto overflow-x-hidden lg:mx-0">
           <Link href="/blog">
-            <a>
-              {' '}
-              <ArrowLeftIcon className="w-5 h-5 mb-5 hover:text-blue-500" />
-            </a>
+
+            {' '}
+            <ArrowLeftIcon className="w-5 h-5 mb-5 hover:text-blue-500" />
+
           </Link>
           <div className="mb-3">
             <h1 className="font-black tracking-tight text-3xl">
