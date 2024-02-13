@@ -1,9 +1,23 @@
-import { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import type { Metadata } from 'next';
+import Head from 'next/head';
+import Providers from './Providers';
+import './globals.css';
 
-export default function Document(): JSX.Element {
+export const metadata: Metadata = {
+  title: 'Robert Ngabo',
+  description: `Software Enginner`,
+  keywords: 'Ngabo Robert, Robert Ngabo, Software Enginner, Rwanda, Kigali',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Html>
+    <html lang="en" suppressHydrationWarning>
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -26,9 +40,14 @@ export default function Document(): JSX.Element {
         />
       </Head>
       <body>
-        <Main />
-        <NextScript />
+        <Providers>
+          <div className="md:max-w-7xl  px-3 md:mx-auto md:px-24 flex flex-col min-h-screen">
+            <Navbar />
+            <div className="flex-grow py-5">{children}</div>
+            <Footer />
+          </div>
+        </Providers>
       </body>
-    </Html>
+    </html>
   );
 }

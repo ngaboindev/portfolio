@@ -1,9 +1,11 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+'use client';
+
 import { MoonIcon, SunIcon } from '@heroicons/react/solid';
-import { useTheme } from 'next-themes';
 import cn from 'classnames';
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 type NavLinkProps = {
   href: string;
@@ -11,20 +13,19 @@ type NavLinkProps = {
 };
 
 function NavLink({ href, text }: NavLinkProps) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
-    (<Link
+    <Link
       href={href}
       className={cn(
         isActive && 'dark:text-gray-100 text-gray-800 font-black',
         'py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500 transition-all'
-      )}>
-
+      )}
+    >
       {text}
-
-    </Link>)
+    </Link>
   );
 }
 
