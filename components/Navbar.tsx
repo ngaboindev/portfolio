@@ -21,7 +21,7 @@ function NavLink({ href, text }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        isActive && 'dark:text-gray-100 text-gray-800 font-black',
+        isActive && 'dark:text-gray-100 text-gray-400',
         'py-1 px-2 rounded dark:text-gray-100  hover:bg-blue-100 dark:hover:bg-gray-500 transition-all'
       )}
     >

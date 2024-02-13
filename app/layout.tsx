@@ -1,16 +1,15 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import Head from 'next/head';
 import Providers from './Providers';
 import './globals.css';
 
-const poppins = Poppins({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
-  weight: '500',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={` ${poppins.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={` ${plusJakartaSans.variable}`}
+    >
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
