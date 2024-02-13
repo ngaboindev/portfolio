@@ -4,7 +4,7 @@
   "private": true,
   "author": "robertngabo <robbingabo9@gmail.com>",
   "engines": {
-    "node": ">=20"
+    "node": "18"
   },
   "scripts": {
     "dev": "next dev",
