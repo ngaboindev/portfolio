@@ -1,6 +1,7 @@
 'use client';
 
-import { MoonIcon, SunIcon } from '@heroicons/react/solid';
+import { LuMoon, LuSun } from 'react-icons/lu';
+
 import cn from 'classnames';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
@@ -43,16 +44,15 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center  px-2 py-6 md:py-10">
       <div className="flex  space-x-1 md:space-x-6 text-gray-800 capitalize dark:text-gray-300">
-        <NavLink href="/" text="Home" />
-        <NavLink href="/projects" text="Projects" />
+        <NavLink href="/about" text="About" />
         <NavLink href="/blog" text="Blog" />
       </div>
       <div>
         <button onClick={toggleTheme} className="p-2 rounded">
           {resolvedTheme === 'dark' ? (
-            <MoonIcon className="h-5 w-5" />
+            <LuMoon className="h-5 w-5" />
           ) : (
-            <SunIcon className="h-5 w-5" />
+            <LuSun className="h-5 w-5" />
           )}
         </button>
       </div>
