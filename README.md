@@ -4,10 +4,11 @@
 
 My personal portfolio website and blog
 
-- Framework: [Next.js]('http://nextjs.org/')
+- [Next.js](http://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- Styling : [Tailwind CSS]('https://tailwindcss.com/')
-- Blog : [MDX](https://mdxjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MDX](https://mdxjs.com/)
+- [Vercel](https://vercel.com/)
 
 ### Running Locally
 
