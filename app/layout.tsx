@@ -2,8 +2,8 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import type { Metadata } from 'next';
 import Head from 'next/head';
+import Providers from './Providers';
 import './globals.css';
-import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'Robert Ngabo',
