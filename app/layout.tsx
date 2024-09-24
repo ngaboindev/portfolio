@@ -1,9 +1,8 @@
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import Head from 'next/head';
 import Providers from './Providers';
+import './font.css';
 import './globals.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -14,8 +13,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: 'Robert Ngabo',
-  description: `Software Enginner`,
-  keywords: 'Ngabo Robert, Robert Ngabo, Software Enginner, Rwanda, Kigali',
+  description: `Software Developer`,
+  keywords: 'Ngabo Robert, Robert Ngabo',
 };
 
 export default function RootLayout({
@@ -52,10 +51,8 @@ export default function RootLayout({
       </Head>
       <body>
         <Providers>
-          <div className="md:max-w-7xl  px-3 md:mx-auto md:px-24 flex flex-col min-h-screen">
-            <Navbar />
+          <div className="md:max-w-4xl  px-3 md:mx-auto md:px-24 flex flex-col min-h-screen">
             <div className="flex-grow py-5">{children}</div>
-            <Footer />
           </div>
         </Providers>
       </body>
