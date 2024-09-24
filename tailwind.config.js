@@ -12,7 +12,7 @@ module.exports = {
         textColor: ['responsive', 'hover', 'focus', 'group-hover'],
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', ...fontFamily.sans],
+        sans: ['Roobert PRO', ...fontFamily.sans],
       },
     },
   },
