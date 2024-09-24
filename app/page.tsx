@@ -4,7 +4,7 @@ export default function Home(): JSX.Element {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="mb-4 dark:text-gray-200">
-        <div className="flex gap-7 items-start">
+        <div className="flex flex-col md:flex-row gap-7 justify-center items-start">
           <Image
             src={'/images/profile.png'}
             alt="me"
