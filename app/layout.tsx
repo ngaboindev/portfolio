@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import SwitchTheme from '@/components/SwitchTheme';
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
@@ -55,6 +56,7 @@ export default function RootLayout({
           <div className="md:max-w-4xl  px-3 md:mx-auto md:px-24 flex flex-col min-h-screen justify-between">
             <SwitchTheme />
             <div className="flex-grow py-5">{children}</div>
+            <Footer />
           </div>
         </Providers>
       </body>
