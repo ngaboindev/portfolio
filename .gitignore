@@ -31,3 +31,11 @@ yarn-error.log*
 
 # vercel
 .vercel
+.claude
+.gemini
+.kiro
+.opencode
+.windsurf
+.agents
+.agent
+.cursor
