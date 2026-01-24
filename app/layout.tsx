@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Footer, ThemeToggle } from '@/components';
 import { siteConfig } from '@/config/site';
-import { Providers } from './providers';
+import type { Metadata } from 'next';
+import Script from 'next/script';
 import './font.css';
 import './globals.css';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
