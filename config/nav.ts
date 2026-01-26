@@ -5,7 +5,7 @@ export const socialLinks = [
     external: false,
   },
   {
-    href: 'https://blogs.robertngabo.com',
+    href: 'https://blog.robertngabo.com',
     label: 'Blog',
     external: true,
   },
