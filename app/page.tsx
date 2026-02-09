@@ -23,7 +23,7 @@ export default function HomePage() {
             {label}
           </a>
         ))}
-      </nav>f
+      </nav>
     </section>
   );
 }
