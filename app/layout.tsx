@@ -1,4 +1,5 @@
-import { Footer, ThemeToggle } from '@/components';
+import { Footer } from '@/components/layout/footer';
+import { ThemeToggle } from '@/components/layout/theme-toggle';
 import { siteConfig } from '@/config/site';
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -59,7 +60,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <Providers>
           <div className="md:max-w-4xl px-3 md:mx-auto md:px-24 flex flex-col min-h-screen justify-between">
-            <main className="flex-grow py-5">{children}</main>
+            <main className="grow py-5">{children}</main>
             <Footer />
           </div>
           <ThemeToggle />

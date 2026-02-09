@@ -9,4 +9,12 @@
   html {
     font-family: var(--font-sans);
   }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+
+  .dark body {
+    @apply bg-black text-gray-100;
+  }
 }
